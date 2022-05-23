@@ -1,0 +1,118 @@
+﻿@model matrix.Models.Views.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- ====== Banner Section Start -->
+<section>
+    <div class="imgbanner">
+        <img src="https://wallpaperboat.com/wp-content/uploads/2019/08/Abstract-Background-Abstraction-Desktop.jpg" />
+    </div>
+</section>
+<!-- ====== Banner Section End -->
+
+<div class="sectiontitlebanner">
+    <div class="sectiontitlebannerchildren"
+    <div>
+        <h2>
+            Como Podemos ajudar seu négocio a evoluir digitalmente?
+        </h2>
+        <button>
+            Saiba mais
+        </button>
+    </div>
+</div>
+</div>
+
+
+<!-- ====== Features Section Start -->
+<section class="pt-20 lg:pt-[120px] pb-8 lg:pb-[70px]" id="servicosdiv">
+    <div class="container sectionstartnew">
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full px-4">
+                <div class="mb-12 lg:mb-20 max-w-[620px]">
+                    <span class="font-semibold text-lg text-primary mb-2 block">
+                        Features
+                    </span>
+                    <h2 class="
+                  font-bold
+                  text-3xl
+                  sm:text-4xl
+                  md:text-[42px]
+                  text-dark
+                  mb-4
+                ">
+                        Nossa lista de serviços
+                    </h2>
+                    <p class="
+                  text-lg
+                  sm:text-xl
+                  leading-relaxed
+                  sm:leading-relaxed
+                  text-body-color
+                ">
+                        Temos uma lista vasta de serviços que podem facilitar o seu dia a dia, confira abaixo alguns deles.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3">
+            @foreach(var item in Model.servicos)
+            {
+@*                @Html.Partial("_Servico", @Model.servicos[i]) *@   
+                <partial name="_Servico" model="item" />
+            }
+            
+        </div>
+        <a asp-action="index" asp-controller="Servicos"
+                       class="font-medium text-base text-body-color hover:text-primary">
+                        Learn More
+                    </a>
+    </div>
+</section>
+<!-- ====== Testimonials Start ====== -->
+<section id="blogdiv" class="pt-20 md:pt-[120px] bg-[#f3f4ff]" style="padding: 100px 0 100px 0" >
+    <div class="sectionstartnew px-4">
+        <div class="flex flex-wrap">
+            <div class="w-full mx-4">
+                <div class="text-center mx-auto mb-[60px] lg:mb-20 max-w-[620px]">
+                    <span class="font-semibold text-lg text-primary mb-2 block">
+                        Postagens
+                    </span>
+                    <h2 class="
+                  font-bold
+                  text-3xl
+                  sm:text-4xl
+                  md:text-[42px]
+                  text-dark
+                  mb-4
+                ">
+                        Destaques no nosso blog
+                    </h2>
+                    <p class="
+                  text-lg
+                  sm:text-xl
+                  leading-relaxed
+                  sm:leading-relaxed
+                  text-body-color
+                ">
+                        Como forma de conhecimento, possuimos essa lista de postagens para que você conheça um pouco mais
+                        o mundo da tecnologia.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap">
+            @foreach(var postagem in Model.Postagens)
+            {
+                <partial name="_Postagem" model="postagem"/>
+            }      
+            </div>
+            <div class="centralizarElemento">
+            <a asp-action="index" asp-controller="Postagems"
+                       class="font-medium text-base text-body-color hover:text-primary">
+                        Learn More
+                    </a>
+                    </div>
+        </div>
+</section>

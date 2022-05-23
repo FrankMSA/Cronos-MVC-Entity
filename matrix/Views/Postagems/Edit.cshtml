@@ -1,0 +1,131 @@
+﻿@using matrix.Models.Entidades
+@using matrix.Models.Views
+
+@model matrix.Models.Views.PostagemViewModel
+
+
+<div class="px-4 w-full centralizarElemento" style="margin-top: 100px; margin-bottom: 100px">
+            <div
+              class="
+                shadow-testimonial
+                rounded-lg
+                bg-white
+                py-10
+                px-8
+                md:p-[60px]
+                lg:p-10
+                2xl:p-[60px]
+                sm:py-12 sm:px-10
+                lg:py-12 lg:px-10
+                wow
+                fadeInUp
+              "
+              data-wow-delay=".2s
+              "
+            >
+              <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">
+                Postagem
+              </h3>
+              <form asp-action= "edit">
+                  <input type="hidden" value="@Model.idPost" name="IdPost" id="IdPost">
+                   <input type="hidden" value="@Model.Date" name="Date" id="Date">
+                <div class="mb-6">
+                  <label for="fullName" class="block text-xs text-dark"
+                    >Blog</label
+                  >
+                  <input
+                    type="text"
+                    name="Titulo"
+                    placeholder="Título do post."
+                    value="@Model.Titulo"
+                    class="
+                      w-full
+                      border-0 border-b border-[#f1f1f1]
+                      focus:border-primary focus:outline-none
+                      py-4
+                    "
+                  />
+                </div>
+                <div class="mb-6">
+                  <label class="block text-xs text-dark"
+                    >Conteúdo</label
+                  >
+                  <input
+                    name="Descricao"
+                    value="@Model.Descricao"
+                    placeholder="Coloque o texto da postagem aqui..."
+                    class="
+                      w-full
+                      border-0 border-b border-[#f1f1f1]
+                      focus:border-primary focus:outline-none
+                      py-4
+                    "
+                  />
+                </div>
+                 <div class="mb-6">
+                  <label class="block text-xs text-dark"
+                    >Imagem</label
+                  >
+                  <input
+                    name="LinkImagemPostagem"
+                    value="@Model.LinkImagemPostagem"
+                    placeholder="Cole o link da imagem aqui..."
+                    class="
+                      w-full
+                      border-0 border-b border-[#f1f1f1]
+                      focus:border-primary focus:outline-none
+                      py-4
+                    "
+                  />
+                </div>
+                 <div class="mb-6">
+                  <label class="block text-xs text-dark"
+                    >Resumo</label
+                  >
+                  <input
+                    name="Resumo"
+                    value="@Model.Resumo"
+                    placeholder="Escreva um breve resumo."
+                    class="
+                      w-full
+                      border-0 border-b border-[#f1f1f1]
+                      focus:border-primary focus:outline-none
+                      py-4
+                    "
+                  />
+                </div>
+                <div class="mb-6">
+                  <label for="message" class="block text-xs text-dark" style="padding-bottom: 10px"
+                    >Aparecerá na Pagina inicial?</label
+                  >
+                  <label class="form-check-label text-xs text-dark" >
+                    <input class="form-check-input" asp-for="mostraPagInicial" /> @Html.DisplayNameFor(model => model.mostraPagInicial)
+                </label>
+                </div>
+                <div class="mb-0">
+                  <button
+                    type="submit"
+                    class="
+                      inline-flex
+                      items-center
+                      justify-center
+                      py-4
+                      px-6
+                      rounded
+                      text-white
+                      bg-primary
+                      text-base
+                      font-medium
+                      hover:bg-dark
+                      transition
+                      duration-300
+                      ease-in-out
+                    "
+                  >
+                    Editar Postagem
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>

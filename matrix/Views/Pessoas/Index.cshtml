@@ -1,0 +1,51 @@
+﻿@model IEnumerable<matrix.Models.Views.PessoaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- ====== Team Section Start -->
+    <section id="team" class="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
+      <div class="container">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full px-4 margintopnavbar">
+            <div class="text-center mx-auto mb-[60px] max-w-[620px]">
+              <span class="font-semibold text-lg text-primary mb-2 block">
+                Our Team
+              </span>
+              <h2
+                class="
+                  font-bold
+                  text-3xl
+                  sm:text-4xl
+                  md:text-[42px]
+                  text-dark
+                  mb-4
+                "
+              >
+                Meet Our Team
+              </h2>
+              <p
+                class="
+                  text-lg
+                  sm:text-xl
+                  leading-relaxed
+                  sm:leading-relaxed
+                  text-body-color
+                "
+              >
+                There are many variations of passages of Lorem Ipsum available
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+            <div class="divintegrantes centralizarElemento">
+          @foreach(var pessoa in Model)
+        {
+            <partial name="_Integrante" model="pessoa"/>
+        }
+          </div>
+          
+        </div>
+        </div>
+        
+        </section>
